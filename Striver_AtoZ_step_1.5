@@ -1,0 +1,188 @@
+#include <iostream>
+//  Understand Recursion by printing something N times
+public:
+    //Complete this function
+    void printNos(int N)
+    {
+        // if(N==1){
+        //     cout<<"1";
+        // }
+        for(int i=1;i<=N;i++){
+            cout<<i<<" ";
+        }
+            }
+
+// Print Name N times using Recursion
+public:
+    void printGfg(int N) {
+        if(N<=0){
+            return;
+        }
+        cout<<"GFG"<<" ";
+        printGfg(N-1);
+    }
+
+// Print 1 to N using Recursion
+// Print 1 To N Without Loop --gfg
+public:
+    //Complete this function
+    void printNos(int N)
+    {
+        // if(N==1){
+        //     cout<<"1";
+        // }
+        for(int i=1;i<=N;i++){
+            cout<<i<<" ";
+        }
+            }
+
+// Print N to 1 using Recursion
+public:
+    void printNos(int N) {
+        // code here
+        for(int i=N;i>=1;i--)
+        cout<<i<<" ";
+    }
+
+// Sum of first N numbers
+public:
+    long long sumOfSeries(long long N) {
+        // code here
+        long long sum =0;
+        for(long long i=0;i<=N;i++){
+          sum+=i*i*i;
+        }
+        return sum;
+    }
+
+---------------------------// Factorial of N numbers---------------------
+
+// basic logic --
+// i-n
+// 1-1
+// 2-2
+// 3-6
+// 4-24
+// 5-120
+// 6-720
+// if we have N=3 then 1,2 will print and if N=50 then it will print less them or equal to 50 output will be 1,2,6,24.
+class Solution
+{
+public:
+    vector<long long> factorialNumbers(long long N)
+    {
+        vector<long long> result;
+        
+        if(N<=0)
+        return result;
+        long long factorial =1;
+        long long i=1;
+        while(factorial<=N){
+            result.push_back(factorial);
+            i++;
+            factorial*=i;
+        }
+        return result;
+    }
+
+// ------------------	Reverse an array -----------------====
+  // Reverse array in groups (GFG)
+
+  public:
+void reverse(int s,int e,vector<long long>& arr){
+while(s<=e){
+    swap(arr[s],arr[e]);
+    s++;
+    e--;
+}
+}
+
+   //Function to reverse every sub-array group of size k.
+    void reverseInGroups(vector<long long>& arr, int n, int k){
+        // code here
+        for(int i=0;i<n;i+=k){
+            int start=i;
+            int end;
+            if((i+k)<n){
+                end=i+k;
+            }
+            else{
+                end=arr.size();
+            }
+            reverse(start,end-1,arr);
+        }
+        
+    }
+  // --------------- Check if a string is palindrome or not=============
+
+  	// GFG
+	int isPalindrome(string S)
+	{
+	     int left = 0, right = S.length()-1;
+        while(left<right)
+        {
+          // alnum means that here se only digit or character if there is white space and any symbol then it will ignore ...
+            if(!isalnum(S[left])) 
+                left++;
+            else if(!isalnum(S[right])) 
+                right--;
+            else if(tolower(S[left])!=tolower(S[right])) 
+                return 0;
+            else {
+                left++; 
+                right--;
+            }
+        }
+        return 1;
+	}
+
+  // Leetcode
+   bool isPalindrome(string s) {
+      int left = 0, right = s.length()-1;
+        while(left<right)
+        {
+            if(!isalnum(s[left])) 
+                left++;
+            else if(!isalnum(s[right])) 
+                right--;
+            else if(tolower(s[left])!=tolower(s[right])) 
+                return false;
+            else {
+                left++; 
+                right--;
+            }
+        }
+
+  // --------------------Fibonacci Number------------------------------
+  // GFG
+   public:
+    //Function to return list containing first n fibonacci numbers.
+    vector<long long> printFibb(int n) 
+    {
+        //code here
+        if(n==1)
+            return {1};
+        
+        if(n==2)
+            return {1,1};
+        
+        vector<long long> v = printFibb(n-1);
+        v.push_back(v[n-2]+v[n-3]);
+        return v;
+    }
+
+  // Leetcode
+  class Solution {
+public:
+    int fib(int n) {
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return 1;
+        }
+        return (fib(n-1)+fib(n-2));
+    }
+};
+  
+  

@@ -1,0 +1,205 @@
+#include <iostream>
+using namespace std;
+// count numbers
+public:
+    int evenlyDivides(int N){
+        int temp=N,count =0;
+        while(temp != 0){
+            int d=temp%10;
+            temp/=10;
+        
+        if(d>0 && N%d == 0)
+            count++;
+        
+        
+        }   
+        return count;
+    }
+
+
+// leetcode Reverse Integer
+
+
+class Solution {
+public:
+    int reverse(int x) {
+        long rev =0;
+        while(x!=0){
+            rev = rev*10+x%10;
+            x=x/10;
+        }
+        if(rev>INT_MAX || rev<INT_MIN) return 0;
+        return rev;
+    }
+};
+
+// GFG Reverse Integer
+public:
+    long long reversedBits(long long X) {
+        // code here
+        long long result =0;
+        int power=31;
+        while(X!=0){
+            result= result+((X&1)<<power);
+            power--;
+            X = X >> 1;
+            
+        }
+        return result;
+    }
+
+
+// / palindrome  - leetcode 
+public:
+    bool isPalindrome(int x) {
+      
+        if (x < -pow(2, 31) || x > pow(2, 31) - 1) {
+            return false; 
+        }
+        
+        if (x < 0) {
+            return false; 
+        }
+        
+        int originalNum = x;
+        long revNum = 0;
+        
+        while (x != 0) {
+            int digit = x % 10;
+            revNum = revNum * 10 + digit;
+            x /= 10;
+        }
+        if (originalNum == revNum) {
+            return true;
+        } else {
+            return false;
+        }
+        
+      
+}
+
+// GFG
+	public:
+		string is_palindrome(int n)
+		{
+		  if (n < 0) {
+            return "No"; // Negative numbers cannot be palindromes
+        }
+        
+        int originalNum = n;
+        int revNum = 0;
+        
+        while (n != 0) {
+            int digit = n % 10;
+            revNum = revNum * 10 + digit;
+            n /= 10;
+        }
+        
+        if (originalNum == revNum) {
+            return "Yes";
+        } else {
+            return "No";
+        }
+		}
+
+// LCM_GCD
+public:
+    vector<long long> lcmAndGcd(long long A , long long B) {
+        vector<long long> result;
+        
+        long long gcdValue = gcd(A, B);
+        long long lcmValue = (A * B) / gcdValue;
+        
+        result.push_back(lcmValue);
+        result.push_back(gcdValue);
+        
+        return result;
+    }
+    
+    long long gcd(long long a, long long b) {
+        if (b == 0)
+            return a;
+        return gcd(b, a % b);
+    }
+
+
+// easy solution 
+#include <iostream>
+
+using namespace std;
+
+int lcm(int a, int b) {
+    int m = (a > b) ? a : b;
+    int i;
+    for (i = m; i <= a * b; i++) {
+        if (i % a == 0 && i % b == 0) {
+            return i;
+        }
+    }
+    return i; 
+}
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    int result = lcm(a, b);
+    cout << "LCM: " << result << endl;
+    cout << "GCD: " << (a*b)/result << endl;
+    return 0;
+}
+
+// Armstrong Number 
+public:
+    string armstrongNumber(int n){
+        int x=n;
+        int digit;
+        int sum =0;
+        while(x>0){
+            digit=x%10;
+            sum+=digit*digit*digit;
+            x=x/10;
+        }
+        if(sum==n){
+            return "Yes";
+        }
+        else
+        return"No";
+    }
+
+// print of all divisors
+public:
+    long long sumOfDivisors(int N)
+    {
+        long long ans=0;
+        for(int i=1;i<=N;i++){
+            long long re=N/i;
+            ans=ans+i*re;
+        }
+        return ans;
+    }
+
+//check for prime
+#include<bits/stdc++.h>
+
+using namespace std;
+
+bool isPrime(int N) {
+  for (int i = 2; i < sqrt(N); i++) {
+    if (N % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+int main() {
+
+  int n = 11;
+
+  bool ans = isPrime(n);
+  if (n != 1 && ans == true) {
+    cout << "Prime Number";
+  } else {
+    cout << "Non Prime Number";
+  }
+  return 0;
+}

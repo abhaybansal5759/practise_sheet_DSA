@@ -1,0 +1,402 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+// Step 1.1 :- 
+// for loop 
+void isPrime(int n) {
+if(n<2){
+    cout<<"No"<<endl;
+    return ;
+}
+    for (int i = 2; i <=sqrt(n); i++) 
+        
+        if(n%i==0)
+            cout<<"No"<<endl;
+         return ;
+    cout<<"Yes"<<endl;
+    }
+
+
+// passed by reference and pass by value 
+class Solution {
+  public:
+    vector<int> passedBy(int a, int &b) {
+        // code here
+        vector<int>ans;
+        ans.push_back(a+1);
+        ans.push_back(b+2);
+        return ans;
+    }
+};
+
+
+                        // step 1.2
+
+//1st que 
+class Solution {
+  public:
+void printSquare(int n) {
+        // code here
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=n;j++){
+                cout<<"*"<<" ";
+            }
+            cout<<endl;
+        }
+    }
+};
+
+// 2nd que 
+class Solution {
+
+public:
+    void printTriangle(int n) {
+        // code here
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                cout<<"*"<<" ";
+            }
+            cout<<endl;
+        }
+    }
+};
+// 3rd
+class Solution {
+public:
+	
+	void printTriangle(int n) {
+	    // code here
+	    for(int i=0;i<n;i++){
+	        for(int j=i;j<n;j++){
+	            cout<<"*"<<" ";
+	        }
+	        cout<<endl;
+	    }
+	}
+};
+
+//4th 
+public:
+    void printTriangle(int n) {
+        for (int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                cout<<i<<" ";
+            }
+            cout<<endl;
+        }
+    }
+
+//5th 
+public:
+	
+	void printTriangle(int n) {
+	    // code here
+	    for(int i=0;i<n;i++){
+	        for(int j=i;j<n;j++){
+	            cout<<"*"<<" ";
+	        }
+	        cout<<endl;
+	    }
+	}
+
+
+// 6th
+public:
+	
+	void printTriangle(int n) {
+	    // code here
+	    for(int i=1;i<=n;i++){
+	        for(int j=1;j<=n-i+1;j++){
+	            cout<<j<<" ";
+	        }
+	        cout<<endl;
+	    }
+	}
+};
+
+//7th 
+ public:
+    void printTriangle(int n) {
+        for(int i=0;i<n;i++){
+            //sapce then star then space 
+            for(int j=0;j<n-i-1;j++){
+                cout<<" ";
+            }
+            for(int j=0;j<2*i+1;j++){
+           cout<<"*";
+        }
+        for(int j=0;j<n-i-1;j++){
+            cout<<" ";
+        }
+        cout<<endl;
+    }
+    }
+
+
+// 8th 
+public:
+	
+	void printTriangle(int n) {
+	    // code here
+	    for(int i=0;i<n;i++){
+	        for(int j=0;j<i;j++){
+	            cout<<" ";
+	        }
+	        for(int j=0;j<2*n-(2*i+1);j++){
+	            cout<<"*";
+	        }
+	        for(int j=0;j<i;j++){
+	            cout<<" ";
+	        }
+	         cout<<endl;
+	    }
+	   
+	}
+
+//9th 
+ public:
+    void printDiamond(int n) {
+        // code here
+         for(int i=0;i<n;i++){
+            //sapce then star then space 
+            for(int j=0;j<n-i-1;j++){
+                cout<<" ";
+            }
+            for(int j=0;j<i+1;j++){
+           cout<<"*"<<" ";
+        }
+        for(int j=0;j<n-i-1;j++){
+            cout<<" ";
+        }
+        cout<<endl;
+        
+    }
+    for(int i=0;i<n;i++){
+	        for(int j=0;j<i;j++){
+	            cout<<" ";
+	        }
+	        for(int j=0;j<n-i;j++){
+	            cout<<"*"<<" ";
+	        }
+	        for(int j=0;j<i;j++){
+	            cout<<" ";
+	        }
+	         cout<<endl;
+	    }
+	   
+	}
+    
+    // 10th 
+public:
+    void printTriangle(int n) {
+        // code here
+         for(int i=1;i<=2*n-1;i++){
+             int stars =i;
+             if(i>n)
+             stars=2*n-i;
+             for(int j=1;j<=stars;j++){
+                 cout<<"*"<<" ";
+             }
+             cout<<endl;
+             
+         }
+    }
+
+//11 
+public:
+    void printTriangle(int n) {
+        int start= 1;
+        for(int i=0;i<n;i++){
+            if(i%2==0)
+            start=1;
+            else
+            start=0;
+            for(int j=0;j<=i;j++){
+                cout<<start<<" ";
+                start=1-start;
+            }
+            
+            cout<<endl;
+        }
+    }
+
+// 12th
+public:
+    void printTriangle(int n) {
+        // numbers
+        int space =2*(n-1);
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                cout<<j<<" ";
+            }
+            //space
+            for(int j=1;j<=space;j++){
+                cout<<"  ";
+            }
+            //number
+            for(int j=i;j>=1;j--){
+                cout<<j<<" ";
+                
+            }
+            cout<<endl;
+            space-=2;
+        }
+    }
+
+// 13
+ public:
+    void printTriangle(int n) {
+        int num=1, i= 1 ;
+        while (i<=n){
+            int j=1;
+            while (j<=i){
+                cout <<num<<" ";
+                num ++;
+                j++;
+            }
+             i++;
+            cout<<endl;
+           
+        }
+    }
+
+// 14
+ public:
+    void printTriangle(int n) {
+        for(int i=1;i<=n;i++){
+            for(char ch='A';ch<'A'+i;ch++){
+                cout<<ch;
+            }
+            cout<<endl;
+        }
+    }
+
+//15
+public:
+    void printTriangle(int n) {
+         for(int i=0;i<n;i++){
+            for(char ch='A';ch<='A'+(n-i-1);ch++){
+                cout<<ch;
+            }
+            cout<<endl;
+        }
+    }
+
+//16
+public:
+    void printTriangle(int n) {
+        for(int i=1;i<=n;i++){
+            char ch ='A'+i-1;
+            for(int j=1;j<=i;j++){
+                cout<<ch;
+            }
+            cout<<endl;
+        }
+    }
+//17
+public:
+    void printTriangle(int n) {
+        for (int i = 0 ;  i < n; i++ ){
+            // for spaces 
+            for (int j = 0 ; j < n-i-1; j++)
+            cout << " ";
+            // // for left traingle
+            // for (char ch = 'A'; ch <= 'A' +i ; ch++)
+            // cout << ""<<ch ;
+            char ch='A';
+            int breakpoint=(2*i+1)/2;
+            for(int j=1;j<=2*i+1;j++){
+                cout<<ch;
+                if(j<=breakpoint)ch++;
+                else ch--;
+            }
+
+            for (int j = 0 ; j <=n-i-1 ; j++)
+            cout << " ";
+            
+            cout << endl;
+        }
+        
+        
+    }
+};
+//18
+ public:
+    void printTriangle(int n) {
+        // code here
+        for(int i=0;i<n;i++){
+            // char ch='';
+            
+            for(int j=n;j>=n-i;j-- ){
+                cout<<char(j+64)<<" ";
+            }
+            cout<<endl;
+        }
+    }
+
+//19
+public:
+    void printTriangle(int n) {
+        // code here
+        int inis=0;
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=n-i;j++){
+                cout<<"*";
+            }
+            for(int j=0;j<inis;j++){
+                cout<<" ";
+            }
+            for(int j=1;j<=n-i;j++){
+                cout<<"*";
+            }
+            inis+=2;
+            cout<<endl;
+            
+    }
+        inis=2*n-2;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                cout<<"*";
+            }
+            for(int j=0;j<inis;j++){
+                cout<<" ";
+            }
+            for(int j=1;j<=i;j++){
+                cout<<"*";
+            }
+            inis-=2;
+            cout<<endl;
+        }
+    }
+
+//22
+public:
+    void printSquare(int n) {
+        // code here
+        
+        int i,j,k,l;
+    
+     for(i=n;i>=1;i--)
+    {
+        for(j=n;j>=i;j--)
+            cout<<j<<" ";
+        for(k=1;k<=(i-1)*2-1;k++)
+            cout<<i<<" ";
+        for(l=i;l<=n;l++){
+            if(l==1)
+                continue;
+            cout<<l<<" ";
+        }
+        cout<<endl;
+    }
+    for(i=2;i<=n;i++)
+    {
+        for(j=n;j>=i;j--)
+            cout<<j<<" ";
+        for(k=1;k<=(i-1)*2-1;k++)
+            cout<<i<<" ";
+        for(l=i;l<=n;l++)
+            cout<<l<<" ";
+        cout<<endl;;
+    }
+    }
