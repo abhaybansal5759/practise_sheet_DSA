@@ -1,0 +1,30 @@
+#include <iostream>
+// ----------Frequencies of Limited Range Array Elements---------------
+ public:
+    //Function to count the frequency of all elements from 1 to N in the array.
+    void frequencyCount(vector<int>& arr,int N, int P)
+    { 
+        // code here
+        vector<int> freq(N+1,0);
+        for(auto x : arr) {
+            if(x <= N) {
+                freq[x]++;
+            }
+        }
+        for(int i=1; i<=N; i++) {
+            arr[i-1] = freq[i];
+        }
+      
+    }
+
+// -------------1838. Frequency of the Most Frequent Element=------------
+public:
+     int maxFrequency(vector<int>& A, int k) {
+        sort(begin(A), end(A));
+        long i = 0, j = 0, N = A.size(), sum = 0;
+        for (; j < N; ++j) {
+            sum += A[j];
+            if ((j - i + 1) * A[j] - sum > k) sum -= A[i++];
+        }
+        return j - i;
+    }
